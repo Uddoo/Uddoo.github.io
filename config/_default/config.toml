@@ -1,6 +1,8 @@
-baseURL = "http://example.org"
-title = "Hugo Zzo Theme"
-theme = "zzo"
+baseURL = 'https://puredeep.github.io'
+languageCode = 'en-us'
+title = "PureDeep's Blog"
+theme = 'zzo'
+
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
