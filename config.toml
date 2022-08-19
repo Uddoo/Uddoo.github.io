@@ -1,4 +1,5 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://puredeep.github.io/'
 languageCode = 'en-us'
 title = "PureDeep's Blog"
 theme = 'hyde'
+publishDir = "docs"
