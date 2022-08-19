@@ -1,4 +1,3 @@
-baseURL = 'https://puredeep.github.io'
+baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = "PureDeep's Blog"
-theme = 'zzo'
+title = 'My New Hugo Site'
