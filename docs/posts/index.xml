@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on PureDeep&#39;s Blog</title>
-    <link>https://puredeep.github.io/posts/</link>
-    <description>Recent content in Posts on PureDeep&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 19 Aug 2022 16:57:47 +0800</lastBuildDate><atom:link href="https://puredeep.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>HelloWorld</title>
-      <link>https://puredeep.github.io/posts/helloworld/</link>
-      <pubDate>Fri, 19 Aug 2022 16:57:47 +0800</pubDate>
-      
-      <guid>https://puredeep.github.io/posts/helloworld/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - PureDeep&#39;s Blog</title>
+        <link>https://puredeep.github.io/posts/</link>
+        <description>All Posts | PureDeep&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>ywli233@qq.com (PureDeep)</managingEditor>
+            <webMaster>ywli233@qq.com (PureDeep)</webMaster><lastBuildDate>Mon, 20 Jun 2022 22:09:32 &#43;0800</lastBuildDate><atom:link href="https://puredeep.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>一些蛇类模拟的效果展示</title>
+    <link>https://puredeep.github.io/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/</link>
+    <pubDate>Mon, 20 Jun 2022 22:09:32 &#43;0800</pubDate>
+    <author>PureDeep</author>
+    <guid>https://puredeep.github.io/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/</guid>
+    <description><![CDATA[记录一下蛇类模拟过程中的一些效果 原型设计 PhysX2.8环境原型设计 单轴驱动 双轴驱动 双轴同频运动效果 双轴蠕动 这个像龙，我很喜欢 双足支撑效果 波]]></description>
+</item>
+</channel>
 </rss>

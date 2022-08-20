@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>一些蛇类模拟的效果展示 - PureDeep&#39;s Blog</title><meta name="Description" content="PureDeep&#39;s Blog"><meta property="og:title" content="一些蛇类模拟的效果展示" />
+<meta property="og:description" content="记录一下蛇类模拟过程中的一些效果 原型设计 PhysX2.8环境原型设计 单轴驱动 双轴驱动 双轴同频运动效果 双轴蠕动 这个像龙，我很喜欢 双足支撑效果 波" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://puredeep.github.io/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/" /><meta property="og:image" content="https://puredeep.github.io/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-20T22:09:32+08:00" />
+<meta property="article:modified_time" content="2022-08-21T00:25:00+08:00" /><meta property="og:site_name" content="PureDeep&#39;s Blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://puredeep.github.io/images/avatar.png"/>
+
+<meta name="twitter:title" content="一些蛇类模拟的效果展示"/>
+<meta name="twitter:description" content="记录一下蛇类模拟过程中的一些效果 原型设计 PhysX2.8环境原型设计 单轴驱动 双轴驱动 双轴同频运动效果 双轴蠕动 这个像龙，我很喜欢 双足支撑效果 波"/>
+<meta name="application-name" content="我的网站">
+<meta name="apple-mobile-web-app-title" content="我的网站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://puredeep.github.io/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一些蛇类模拟的效果展示",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/puredeep.github.io\/posts\/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA\/"
+        },"genre": "posts","wordcount":  132 ,
+        "url": "https:\/\/puredeep.github.io\/posts\/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA\/","datePublished": "2022-06-20T22:09:32+08:00","dateModified": "2022-08-21T00:25:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "PureDeep"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="PureDeep&#39;s Blog">PureDeep&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="PureDeep&#39;s Blog">PureDeep&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">一些蛇类模拟的效果展示</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/PureDeep" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>PureDeep</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;132 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#原型设计">原型设计</a>
+      <ul>
+        <li><a href="#physx28环境原型设计">PhysX2.8环境原型设计</a></li>
+        <li><a href="#physx40环境原型设计">PhysX4.0环境原型设计</a></li>
+        <li><a href="#ue4环境原型设计">UE4环境原型设计</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="记录一下蛇类模拟过程中的一些效果">记录一下蛇类模拟过程中的一些效果</h1>
+<h2 id="原型设计">原型设计</h2>
+<h3 id="physx28环境原型设计">PhysX2.8环境原型设计</h3>
+<h4 id="单轴驱动">单轴驱动</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_0.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_0.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_0.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_0.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_0.gif"
+        title="Snake2.8_0" width="640" height="640" /></p>
+<h4 id="双轴驱动">双轴驱动</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_1.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_1.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_1.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_1.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_1.gif"
+        title="Snake2.8_1" width="640" height="640" /></p>
+<h5 id="双轴同频运动效果">双轴同频运动效果</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_3.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_3.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_3.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_3.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_3.gif"
+        title="Snake2.8_3" width="1088" height="736" /></p>
+<p>双轴蠕动</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_4.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_4.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_4.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_4.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_4.gif"
+        title="Snake2.8_4" width="1920" height="1020" /></p>
+<p>这个像龙，我很喜欢</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_2.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_2.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_2.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_2.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_2.gif"
+        title="Snake2.8_2" width="640" height="640" /></p>
+<p>双足支撑效果</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_6.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_6.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_6.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_6.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_6.gif"
+        title="Snake2.8_6" width="907" height="420" /></p>
+<p>波动效果</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_5.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_5.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_5.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_5.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_5.gif"
+        title="Snake2.8_5" width="750" height="766" /></p>
+<p>波动及爬墙</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_7.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_7.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_7.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_7.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake2.8_7.gif"
+        title="Snake2.8_7" width="1920" height="1020" /></p>
+<h3 id="physx40环境原型设计">PhysX4.0环境原型设计</h3>
+<p>自动朝向调整效果</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_3.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_3.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_3.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_3.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_3.gif"
+        title="Snake4.0_3" width="640" height="360" /></p>
+<p>柱体与墙面间移动</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_2.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_2.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_2.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_2.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/Snake4.0_2.gif"
+        title="Snake4.0_2" width="804" height="398" /></p>
+<h3 id="ue4环境原型设计">UE4环境原型设计</h3>
+<p>爬斜面效果</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif"
+        title="SnakeUE4_3" width="645" height="363" /></p>
+<p>越障</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_1.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_1.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_1.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_1.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_1.gif"
+        title="SnakeUE4_1" width="1296" height="800" /></p>
+<p>柱间移动</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_2.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_2.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_2.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_2.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_2.gif"
+        title="SnakeUE4_2" width="1296" height="800" /></p>
+<p>带动骨骼</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif"
+        data-srcset="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif 1.5x, /posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif 2x"
+        data-sizes="auto"
+        alt="/posts/%E4%B8%80%E4%BA%9B%E8%9B%87%E7%B1%BB%E6%A8%A1%E6%8B%9F%E7%9A%84%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA/SnakeUE4_3.gif"
+        title="SnakeUE4_3" width="645" height="363" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-21&nbsp;<a class="git-hash" href="https://github.com/PureDeep/PureDeep.github.io.git/commit/6be469c55bf35a734adb16cad1e920f8241e46f2" target="_blank" title="commit by PureDeep(542057950@qq.com) 6be469c55bf35a734adb16cad1e920f8241e46f2: Update.">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>6be469c</a></span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/PureDeep" target="_blank">PureDeep</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

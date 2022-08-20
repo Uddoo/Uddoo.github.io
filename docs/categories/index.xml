@@ -3,5 +3,6 @@
         <title>Categories - Category - PureDeep&#39;s Blog</title>
         <link>https://puredeep.github.io/categories/</link>
         <description>Categories - Category - PureDeep&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://puredeep.github.io/categories/" rel="self" type="application/rss+xml" /></channel>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>ywli233@qq.com (PureDeep)</managingEditor>
+            <webMaster>ywli233@qq.com (PureDeep)</webMaster><atom:link href="https://puredeep.github.io/categories/" rel="self" type="application/rss+xml" /></channel>
 </rss>
