@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="031f418c-dbfd-4c9b-9dd8-3beabc5bac60" name="Changes" comment="Update.">
-      <change afterPath="$PROJECT_DIR$/content/posts/一些蛇类模拟的效果展示/SnakeUE4_0.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/一些蛇类模拟的效果展示/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/一些蛇类模拟的效果展示/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
       <workItem from="1661000441601" duration="791000" />
       <workItem from="1661001250032" duration="87000" />
       <workItem from="1661001344211" duration="4971000" />
-      <workItem from="1661012446234" duration="980000" />
+      <workItem from="1661012446234" duration="1143000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1660898458453</created>
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661013134704</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update.">
+      <created>1661013444449</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661013444449</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
