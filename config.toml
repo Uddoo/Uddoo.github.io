@@ -1,5 +1,5 @@
 baseURL = 'https://puredeep.github.io/'
 languageCode = 'en-us'
 title = "PureDeep's Blog"
-theme = 'hyde'
+theme = 'LoveIt'
 publishDir = "docs"

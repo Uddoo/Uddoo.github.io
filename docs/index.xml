@@ -1,20 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>PureDeep&#39;s Blog</title>
-    <link>https://puredeep.github.io/</link>
-    <description>Recent content on PureDeep&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 19 Aug 2022 16:57:47 +0800</lastBuildDate><atom:link href="https://puredeep.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>HelloWorld</title>
-      <link>https://puredeep.github.io/posts/helloworld/</link>
-      <pubDate>Fri, 19 Aug 2022 16:57:47 +0800</pubDate>
-      
-      <guid>https://puredeep.github.io/posts/helloworld/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>PureDeep&#39;s Blog</title>
+        <link>https://puredeep.github.io/</link>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language>
+            <atom:link href="https://puredeep.github.io/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
 </rss>
