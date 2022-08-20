@@ -8,4 +8,4 @@ draft: true
 
 PhysX2.8环境
 
-![](Snake2.8_0.gif)
+![](./Snake2.8_0.gif)
