@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="031f418c-dbfd-4c9b-9dd8-3beabc5bac60" name="Changes" comment="Update.">
+    <list default="true" id="031f418c-dbfd-4c9b-9dd8-3beabc5bac60" name="Changes" comment="Add refs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/HelloWorld.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/HelloWorld.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/一些可供参考的资源站点/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/一些可供参考的资源站点/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <workItem from="1661138478627" duration="182000" />
       <workItem from="1661138739275" duration="3156000" />
       <workItem from="1661164568576" duration="687000" />
-      <workItem from="1661842640568" duration="608000" />
+      <workItem from="1661842640568" duration="983000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1660898458453</created>
@@ -155,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661164581475</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add refs.">
+      <created>1661843318988</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1661843318988</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +186,7 @@
     <MESSAGE value="Hyde init." />
     <MESSAGE value="LoveIt init." />
     <MESSAGE value="Update." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update." />
+    <MESSAGE value="Add refs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add refs." />
   </component>
 </project>
