@@ -6,7 +6,7 @@ publishDir = "docs"
 theme = "LoveIt"
 
 # 网站标题
-title = "PureDeep's Blog"
+title = "Uddoo's Blog"
 
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "zh-CN"
@@ -28,9 +28,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # 作者配置
 [author]
-name = "PureDeep"
+name = "Uddoo"
 email = "ywli233@qq.com"
-link = "https://github.com/PureDeep"
+link = "https://github.com/Uddoo"
 
 # 菜单配置
 [menu]
@@ -66,16 +66,16 @@ title = ""
 # 网站默认主题样式 ["auto", "light", "dark"]
 defaultTheme = "auto"
 # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
-gitRepo = "https://github.com/PureDeep/PureDeep.github.io.git"
+gitRepo = "https://github.com/Uddoo/Uddoo.github.io.git"
 # LoveIt 新增 | 0.1.1 哪种哈希函数用来 SRI, 为空时表示不使用 SRI
 # ["sha256", "sha384", "sha512", "md5"]
 fingerprint = ""
 # LoveIt 新增 | 0.2.0 日期格式
 dateFormat = "2006-01-02"
 # 网站标题, 用于 Open Graph 和 Twitter Cards
-title = "PureDeep's Blog"
+title = "Uddoo's Blog"
 # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-description = "PureDeep's Blog"
+description = "Uddoo's Blog"
 # 网站图片, 用于 Open Graph 和 Twitter Cards
 images = ["/images/avatar.png"]
 
@@ -90,7 +90,7 @@ mobileMode = "auto"
 # LOGO 的 URL
 logo = ""
 # 标题名称
-name = "PureDeep's Blog"
+name = "Uddoo's Blog"
 # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
 pre = ""
 # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
@@ -203,13 +203,13 @@ defaultHiddenFromHomePage = false
 
 # 作者的社交信息设置
 [params.social]
-GitHub = "PureDeep"
+GitHub = "Uddoo"
 # Linkedin = ""
 # Twitter = "xxxx"
 # Instagram = "xxxx"
 # Facebook = "xxxx"
 # Paypal = ""
-Steam = "puredeep"
+Steam = "PureDeep"
 Zhihu = "wei-wei-78-20"
 Bilibili = "4507606"
 Email = "ywli233@qq.com"

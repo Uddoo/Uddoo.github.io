@@ -6,7 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="031f418c-dbfd-4c9b-9dd8-3beabc5bac60" name="Changes" comment="Add refs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/一些可供参考的资源站点/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/一些可供参考的资源站点/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/css/style.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/style.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/theme.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/theme.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/page/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/page/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/posts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/posts/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/posts/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/posts/page/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/posts/page/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/posts/一些可供参考的资源站点/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/posts/一些可供参考的资源站点/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/posts/一些蛇类模拟的效果展示/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/posts/一些蛇类模拟的效果展示/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/posts/基于pbd的弹性网生成/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/posts/基于pbd的弹性网生成/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/_gen/assets/scss/css/style.scss_d75fd08668b4bae707167bbce4d8ca46.content" beforeDir="false" afterPath="$PROJECT_DIR$/resources/_gen/assets/scss/css/style.scss_d75fd08668b4bae707167bbce4d8ca46.content" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -34,12 +52,13 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/06-Git/PureDeep.github.io&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/06-Git/Uddoo.github.io&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -71,6 +90,9 @@
       <workItem from="1661164568576" duration="687000" />
       <workItem from="1661842640568" duration="983000" />
       <workItem from="1661871106464" duration="670000" />
+      <workItem from="1664239510282" duration="52000" />
+      <workItem from="1664239569531" duration="569000" />
+      <workItem from="1664240163070" duration="222000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1660898458453</created>

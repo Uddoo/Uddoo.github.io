@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - PureDeep&#39;s Blog</title>
+        <title>Tags - Tag - Uddoo&#39;s Blog</title>
         <link>https://puredeep.github.io/tags/</link>
-        <description>Tags - Tag - PureDeep&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>ywli233@qq.com (PureDeep)</managingEditor>
-            <webMaster>ywli233@qq.com (PureDeep)</webMaster><atom:link href="https://puredeep.github.io/tags/" rel="self" type="application/rss+xml" /></channel>
+        <description>Tags - Tag - Uddoo&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>ywli233@qq.com (Uddoo)</managingEditor>
+            <webMaster>ywli233@qq.com (Uddoo)</webMaster><atom:link href="https://puredeep.github.io/tags/" rel="self" type="application/rss+xml" /></channel>
 </rss>
