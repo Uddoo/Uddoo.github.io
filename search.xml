@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2023/02/11/hello-world/</url>
+    <url>/blog/2023/02/11/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -20,7 +20,7 @@
   </entry>
   <entry>
     <title>Ray Tracing in One Week系列</title>
-    <url>/2023/02/11/RayTracingInOneWeek/</url>
+    <url>/blog/2023/02/11/RayTracingInOneWeek/</url>
     <content><![CDATA[<h1 id="Ray-Tracing-in-One-Week系列笔记"><a href="#Ray-Tracing-in-One-Week系列笔记" class="headerlink" title="Ray Tracing in One Week系列笔记"></a>Ray Tracing in One Week系列笔记</h1><h2 id="Chapter-1-2-Output-an-image-and-Vec3"><a href="#Chapter-1-2-Output-an-image-and-Vec3" class="headerlink" title="Chapter 1~2 : Output an image and Vec3"></a>Chapter 1~2 : Output an image and Vec3</h2><p>输出到PPM图片文件</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;vec3.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> nx = <span class="number">200</span>;</span><br><span class="line">	<span class="type">int</span> ny = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 以写模式打开文件</span></span><br><span class="line">	std::ofstream outfile;</span><br><span class="line">	outfile.<span class="built_in">open</span>(<span class="string">&quot;color.ppm&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// PPM格式，P3表示颜色以ASCII表示，200行，100列，最大颜色数量255</span></span><br><span class="line">	outfile &lt;&lt; <span class="string">&quot;P3\n&quot;</span> &lt;&lt; nx &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; ny &lt;&lt; <span class="string">&quot;\n255\n&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = ny - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nx; i++) &#123;</span><br><span class="line">			<span class="function">vec3 <span class="title">col</span><span class="params">(<span class="type">float</span>(i) / <span class="type">float</span>(nx), <span class="type">float</span>(j) / <span class="type">float</span>(ny), <span class="number">0.2</span>)</span></span>;</span><br><span class="line">			<span class="comment">// 将（0，1）扩张到（0，255.99）</span></span><br><span class="line">			<span class="type">int</span> ir = <span class="built_in">int</span>(<span class="number">255.99</span> * col[<span class="number">0</span>]);</span><br><span class="line">			<span class="type">int</span> ig = <span class="built_in">int</span>(<span class="number">255.99</span> * col[<span class="number">1</span>]);</span><br><span class="line">			<span class="type">int</span> ib = <span class="built_in">int</span>(<span class="number">255.99</span> * col[<span class="number">2</span>]);</span><br><span class="line">			outfile &lt;&lt; ir &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; ig &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; ib &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	outfile.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -183,5 +183,10 @@
       <tags>
         <tag>计算机图形学, 光线追踪</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>pictest</title>
+    <url>/blog/2023/02/11/pictest/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
