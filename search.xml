@@ -232,4 +232,17 @@
         <tag>计算机图形学, 光线追踪</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo公式解决方案</title>
+    <url>/blog/2023/02/12/HexoEquationSetting/</url>
+    <content><![CDATA[<p>卸载原有渲染器：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked  --save</span><br></pre></td></tr></table></figure>
+<p>安装<code>markdown-it-katex</code>插件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install markdown-it-katex --save</span><br></pre></td></tr></table></figure>
+<p>此方法能够在使用<code>hexo-asset-image</code>时同时保证图片和数学公式的正确显示。</p>
+]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
 </search>
