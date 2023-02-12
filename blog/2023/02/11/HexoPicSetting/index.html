@@ -102,7 +102,7 @@
       <h1 class="site-title">2D Cat Studio</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">Uddoo's Blog</p>
+      <p class="site-subtitle" itemprop="description">二维猫工作室</p>
   </div>
 
   <div class="site-nav-right">
@@ -120,6 +120,11 @@
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -181,7 +186,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/blog/2023/02/11/HexoPicSetting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="Uddoo">
       <meta itemprop="description" content="">
     </span>
@@ -335,6 +340,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Uddoo"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Uddoo</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -348,11 +355,24 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/uddoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;uddoo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ywli233@qq.com" title="E-Mail → mailto:ywli233@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/3461572670261783" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3461572670261783" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i></a>
+      </span>
+  </div>
 
 
 
@@ -449,6 +469,8 @@
 <script src="/js/next-boot.js"></script>
 
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
 
 
   

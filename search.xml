@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Pictest</title>
-    <url>/blog/2023/02/11/pictest/</url>
-    <content><![CDATA[<p><img src="photo.png" alt="photo.png"></p>
+    <title>Hexo公式解决方案</title>
+    <url>/blog/2023/02/12/HexoEquationSetting/</url>
+    <content><![CDATA[<p>卸载原有渲染器：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked  --save</span><br></pre></td></tr></table></figure>
+<p>安装<code>markdown-it-katex</code>插件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install markdown-it-katex --save</span><br></pre></td></tr></table></figure>
+<p>此方法能够在使用<code>hexo-asset-image</code>时同时保证图片和数学公式的正确显示。</p>
 ]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -50,9 +57,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Test</title>
-    <url>/blog/2023/02/11/test/</url>
-    <content><![CDATA[]]></content>
+    <title>Pictest</title>
+    <url>/blog/2023/02/11/pictest/</url>
+    <content><![CDATA[<p><img src="photo.png" alt="photo.png"></p>
+]]></content>
   </entry>
   <entry>
     <title>Ray Tracing in One Week</title>
@@ -233,16 +241,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo公式解决方案</title>
-    <url>/blog/2023/02/12/HexoEquationSetting/</url>
-    <content><![CDATA[<p>卸载原有渲染器：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked  --save</span><br></pre></td></tr></table></figure>
-<p>安装<code>markdown-it-katex</code>插件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install markdown-it-katex --save</span><br></pre></td></tr></table></figure>
-<p>此方法能够在使用<code>hexo-asset-image</code>时同时保证图片和数学公式的正确显示。</p>
-]]></content>
-      <tags>
-        <tag>工具</tag>
-      </tags>
+    <title>Test</title>
+    <url>/blog/2023/02/11/test/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
