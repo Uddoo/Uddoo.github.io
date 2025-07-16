@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Ray Tracing in One Week</title>
-    <url>/blog/2022/09/11/RayTracingInOneWeek/</url>
+    <url>/Uddoo/Uddoo.github.io/blog/2022/09/11/RayTracingInOneWeek/</url>
     <content><![CDATA[<h1 id="ray-tracing-in-one-week系列笔记"><a class="markdownIt-Anchor" href="#ray-tracing-in-one-week系列笔记"></a> Ray Tracing in One Week系列笔记</h1>
 <h2 id="chapter-1~2-output-an-image-and-vec3"><a class="markdownIt-Anchor" href="#chapter-1~2-output-an-image-and-vec3"></a> Chapter 1~2 : Output an image and Vec3</h2>
 <p>输出到PPM图片文件</p>
@@ -181,7 +181,7 @@
   </entry>
   <entry>
     <title>Hexo公式解决方案</title>
-    <url>/blog/2023/02/12/HexoEquationSetting/</url>
+    <url>/Uddoo/Uddoo.github.io/blog/2023/02/12/HexoEquationSetting/</url>
     <content><![CDATA[<p>卸载原有渲染器：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked  --save</span><br></pre></td></tr></table></figure>
 <p>安装<code>markdown-it-katex</code>插件：</p>
@@ -194,7 +194,7 @@
   </entry>
   <entry>
     <title>Hexo图片路径解决方案</title>
-    <url>/blog/2023/02/11/HexoPicSetting/</url>
+    <url>/Uddoo/Uddoo.github.io/blog/2023/02/11/HexoPicSetting/</url>
     <content><![CDATA[<p>在<code>_config.yml</code>中将<code>post_asset_folder: false</code>改为<code>post_asset_folder: true</code>。</p>
 <h3 id="安装插件"><a class="markdownIt-Anchor" href="#安装插件"></a> 安装插件</h3>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
@@ -218,18 +218,18 @@
   </entry>
   <entry>
     <title>Test</title>
-    <url>/blog/2023/02/11/test/</url>
+    <url>/Uddoo/Uddoo.github.io/blog/2023/02/11/test/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Pictest</title>
-    <url>/blog/2023/02/11/pictest/</url>
+    <url>/Uddoo/Uddoo.github.io/blog/2023/02/11/pictest/</url>
     <content><![CDATA[<p><img src="/.com//photo.png" alt="photo.png"></p>
 ]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/blog/2022/02/11/hello-world/</url>
+    <url>/Uddoo/Uddoo.github.io/blog/2022/02/11/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
 <h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
